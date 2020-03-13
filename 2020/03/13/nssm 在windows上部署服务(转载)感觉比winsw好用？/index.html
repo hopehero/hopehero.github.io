@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>使用CCProxy无法绕过深信服？教你使用Shadowsocks（纸飞机）和Proxifier绕过限制 - 想做英雄</title>
+    <title>nssm 在windows上部署服务(转载)感觉比winsw好用？ - 想做英雄</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="想做英雄,"> 
-    <meta name="description" content="beizhushisha,我们公司弄了个深信服的软件限制我们上网，这其实是好事，防止我们上班摸鱼，但是为什么要限制微信啊，客户对接都是用微信办公，用手机聊天还会被摄像头拍到，没办法，只能曲线救国自己想办法了开始我是用CCPr,"> 
+    <meta name="description" content="beizhushisha,简介　　NSSM是一款可将Nodejs项目注册为Windows系统服务的工具。当你的Node.js项目需要部署在Windows Server上时，NSSM是一个不错的选择。
+特点　　NSSM将Nod,"> 
     <meta name="author" content="H&amp;h"> 
     <link rel="alternative" href="atom.xml" title="想做英雄" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -36,7 +37,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://想做英雄.top"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">使用CCProxy无法绕过深信服？教你使用Shadowsocks（纸飞机）和Proxifier绕过限制</h3>
+    <h3 class="subtitle">nssm 在windows上部署服务(转载)感觉比winsw好用？</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -54,29 +55,21 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">使用CCProxy无法绕过深信服？教你使用Shadowsocks（纸飞机）和Proxifier绕过限制</h1>
+        <h1 class="title">nssm 在windows上部署服务(转载)感觉比winsw好用？</h1>
         <div class="stuff">
-            <span>三月 09, 2020</span>
+            <span>三月 13, 2020</span>
             
   <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <p>我们公司弄了个深信服的软件限制我们上网，这其实是好事，防止我们上班摸鱼，但是为什么要限制微信啊，客户对接都是用微信办公，用手机聊天还会被摄像头拍到，没办法，只能曲线救国自己想办法了<br>开始我是用CCProxy将我自己的服务器设置为了代理服务器，经过测试我的ip地址却是变成了服务器地址，但是应用程序还是无法上网，我又使用Proxifier将应用程序的联网也走CCProxy的网络连接还是不行，猜测可能是到路由器那就被打回了，突然想起用过ssr去谷歌求识的经历，然后测试ssr真的可以</p>
-<blockquote>
-<p>首先你需要有ShadowsocksR连接</p>
-</blockquote>
-<p> 我这里自己搭建一个<br> 搭建教程地址<a href="https://www.nbmao.com/archives/2905" target="_blank" rel="noopener">Windows Server 上搭建 ShadowsocksR 服务端</a></p>
-<p> 搭建完成之后启动ShadowsocksR-dotnet4.0.exe，启动完毕之后右下角会有个小飞机的图标，双击打开填写服务器配置文件config.json的配置，保持一致就可以了，然后右键小飞机–系统代理模式改为全局模式(如果只是想单独某个软件使用代理的话测试成功之后可以用直连模式)，代理规则–绕过局域网或者全局，然后查一下你的ip变没变，如果变成了服务器的ip那就证明你成功了<br> <img src="http://s1.wailian.download/2020/03/09/87cdd1a933f7f130982070d6bdd5c208.png" alt="enter description here"><br>这里应该是你本地电脑连接服务器的端口，我没测试是不是,懒得改，如果是的话Proxifier就用这个端口连接(这里的文件名有误 配置文件应该是user-config.json)<br> <img src="http://s1.wailian.download/2020/03/09/7c728d3a16c1c825512091dc3e3d4eb0.png" alt="enter description here"></p>
-<blockquote>
-<p>然后打开Proxifier客户端</p>
-</blockquote>
-<p> 配置文件–代理服务器–添加你本地的ip（因为你使用ShadowsocksR-dotnet4.0已经将本地走服务器环境了）,那就是127.0.0.1,,端口号就是上面配置文件的（应该是）1080，选择socks version 5 点击确定<br> <img src="http://s1.wailian.download/2020/03/09/_20200309101506.png" alt="enter description here"></p>
-<blockquote>
-<p>这时候因为两个软件有冲突，所以需要将ShadowsocksR-dotnet4.0.exe设置为不需要Proxifier代理</p>
-</blockquote>
-<p>点击配置文件–代理规则–添加 应用程序选ShadowsocksR-dotnet4.0.exe动作选Direct<br><img src="http://s1.wailian.download/2020/03/09/ce3689fd70239662df9e92bb6e55b8f3.png" alt="enter description here"><br>点击确定，再添加一个任意<br>动作选proxy sock5 127.0.0.1<br><img src="http://s1.wailian.download/2020/03/09/14300f057daf23baa.png" alt="enter description here"><br>大功告成 开始愉快的上网吧！(ps:如果软件本身支持代理方式联网的话可以不用Proxifier，例如微信，直接开启ShadowsocksR-dotnet4.0.exe 然后填写地址127.0.0.1和端口1080就可以上网了)</p>
+            <p><strong>简介</strong><br>　　NSSM是一款可将Nodejs项目注册为Windows系统服务的工具。当你的Node.js项目需要部署在Windows Server上时，NSSM是一个不错的选择。</p>
+<p><strong>特点</strong><br>　　NSSM将Node.js项目注册为服务后，启动、停止、重启皆由windows来管理，所以我们不必担心NSSM无法处理项目因意外的停止，而Windows的服务管理即可处理这些问题。</p>
+<p><strong>使用</strong><br>1.下载NSSM       download.<br>2.根据自己的平台，将32/64位nssm.exe文件解压至任意文件夹。<br>3.cmd定位至nssm.exe所在目录。<br>4.输入 nssm install {服务名称}，即注册服务的名称。注册服务弹出如下NSSM界面。<img src="http://s1.wailian.download/2020/03/13/1.png" alt="enter description here"><img src="http://s1.wailian.download/2020/03/13/3.png" alt="enter description here"><br>5.Application标签设置：</p>
+<p>Application Path: 选择系统安装的node.exe。<br>Startup directory: 选择nodejs项目的根目录。<br>Arguments: 输入启动参数，如默认的express项目的参数为./bin/www<br>6.上述步骤操作完成，即可点击Install service来注册服务。我们在系统的服务中即可找到刚刚注册的服务。<br>7.在系统服务中找到刚刚注册的服务，右键属性 - 恢复即可设置此服务挂掉重启等内容。</p>
+<p>nssm常用命令：</p>
+<p>nssm install servername //创建servername服务<br>nssm start servername //启动服务<br>nssm stop servername //暂停服务<br>nssm restart servername //重新启动服务<br>nssm remove servername //删除创建的servername服务</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
