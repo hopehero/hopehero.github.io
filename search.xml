@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>将Hexo博客部署到新版coding上</title>
+    <url>/2020/03/17/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%96%B0%E7%89%88coding%E4%B8%8A/</url>
+    <content><![CDATA[<p>待更新</p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>(转载)nssm 在windows上部署服务 感觉比winsw好用？</title>
+    <url>/2020/03/13/(%E8%BD%AC%E8%BD%BD)nssm%20%E5%9C%A8windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%20%E6%84%9F%E8%A7%89%E6%AF%94winsw%E5%A5%BD%E7%94%A8/</url>
+    <content><![CDATA[<p><strong>简介</strong><br>　　NSSM是一款可将Nodejs项目注册为Windows系统服务的工具。当你的Node.js项目需要部署在Windows Server上时，NSSM是一个不错的选择。</p>
+<p><strong>特点</strong><br>　　NSSM将Node.js项目注册为服务后，启动、停止、重启皆由windows来管理，所以我们不必担心NSSM无法处理项目因意外的停止，而Windows的服务管理即可处理这些问题。</p>
+<p><strong>使用</strong><br>1.下载NSSM       download.<br>2.根据自己的平台，将32/64位nssm.exe文件解压至任意文件夹。<br>3.cmd定位至nssm.exe所在目录。<br>4.输入 nssm install {服务名称}，即注册服务的名称。注册服务弹出如下NSSM界面。<img src="http://s1.wailian.download/2020/03/13/1.png" alt="enter description here"><img src="http://s1.wailian.download/2020/03/13/3.png" alt="enter description here"><br>5.Application标签设置：</p>
+<p>Application Path: 选择系统安装的node.exe。<br>Startup directory: 选择nodejs项目的根目录。<br>Arguments: 输入启动参数，如默认的express项目的参数为./bin/www<br>6.上述步骤操作完成，即可点击Install service来注册服务。我们在系统的服务中即可找到刚刚注册的服务。<br>7.在系统服务中找到刚刚注册的服务，右键属性 - 恢复即可设置此服务挂掉重启等内容。</p>
+<p>nssm常用命令：</p>
+<p>nssm install servername //创建servername服务<br>nssm start servername //启动服务<br>nssm stop servername //暂停服务<br>nssm restart servername //重新启动服务<br>nssm remove servername //删除创建的servername服务</p>
+<p>转载自博客园 <a href="https://www.cnblogs.com/hai-cheng/p/8670395.html" target="_blank" rel="noopener">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用CCProxy无法绕过深信服 教你使用Shadowsocks（纸飞机）和Proxifier绕过限制</title>
+    <url>/2020/03/09/%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8Shadowsocks%EF%BC%88%E7%BA%B8%E9%A3%9E%E6%9C%BA%EF%BC%89%E5%92%8CProxifier%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6/</url>
+    <content><![CDATA[<p>我们公司弄了个深信服的软件限制我们上网，这其实是好事，防止我们上班摸鱼，但是为什么要限制微信啊，客户对接都是用微信办公，用手机聊天还会被摄像头拍到，没办法，只能曲线救国自己想办法了<br>开始我是用CCProxy将我自己的服务器设置为了代理服务器，经过测试我的ip地址却是变成了服务器地址，但是应用程序还是无法上网，我又使用Proxifier将应用程序的联网也走CCProxy的网络连接还是不行，猜测可能是到路由器那就被打回了，突然想起用过ssr去谷歌求识的经历，然后测试ssr真的可以</p>
+<blockquote>
+<p>首先你需要有ShadowsocksR连接</p>
+</blockquote>
+<p> 我这里自己搭建一个<br> 搭建教程地址<a href="https://www.nbmao.com/archives/2905" target="_blank" rel="noopener">Windows Server 上搭建 ShadowsocksR 服务端</a></p>
+<p> 搭建完成之后启动ShadowsocksR-dotnet4.0.exe，启动完毕之后右下角会有个小飞机的图标，双击打开填写服务器配置文件config.json的配置，保持一致就可以了，然后右键小飞机–系统代理模式改为全局模式(如果只是想单独某个软件使用代理的话测试成功之后可以用直连模式)，代理规则–绕过局域网或者全局，然后查一下你的ip变没变，如果变成了服务器的ip那就证明你成功了<br> <img src="http://s1.wailian.download/2020/03/09/87cdd1a933f7f130982070d6bdd5c208.png" alt="enter description here"><br>这里应该是你本地电脑连接服务器的端口，我没测试是不是,懒得改，如果是的话Proxifier就用这个端口连接(这里的文件名有误 配置文件应该是user-config.json)<br> <img src="http://s1.wailian.download/2020/03/09/7c728d3a16c1c825512091dc3e3d4eb0.png" alt="enter description here"></p>
+<blockquote>
+<p>然后打开Proxifier客户端</p>
+</blockquote>
+<p> 配置文件–代理服务器–添加你本地的ip（因为你使用ShadowsocksR-dotnet4.0已经将本地走服务器环境了）,那就是127.0.0.1,,端口号就是上面配置文件的（应该是）1080，选择socks version 5 点击确定<br> <img src="http://s1.wailian.download/2020/03/09/_20200309101506.png" alt="enter description here"></p>
+<blockquote>
+<p>这时候因为两个软件有冲突，所以需要将ShadowsocksR-dotnet4.0.exe设置为不需要Proxifier代理</p>
+</blockquote>
+<p>点击配置文件–代理规则–添加 应用程序选ShadowsocksR-dotnet4.0.exe动作选Direct<br><img src="http://s1.wailian.download/2020/03/09/ce3689fd70239662df9e92bb6e55b8f3.png" alt="enter description here"><br>点击确定，再添加一个任意<br>动作选proxy sock5 127.0.0.1<br><img src="http://s1.wailian.download/2020/03/09/14300f057daf23baa.png" alt="enter description here"><br>大功告成 开始愉快的上网吧！(ps:如果软件本身支持代理方式联网的话可以不用Proxifier，例如微信，直接开启ShadowsocksR-dotnet4.0.exe 然后填写地址127.0.0.1和端口1080就可以上网了)</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我对抽象类的理解</title>
+    <url>/2020/01/09/%E6%88%91%E5%AF%B9%E6%8A%BD%E8%B1%A1%E7%B1%BB(abstract%20)%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>看了一下现在项目的代码，我真心觉得所有业务代码都是在制造垃圾，也不知道是心血来潮还是怎么样，我觉得自己不能再这么下去了，就想想办法改变一下自己写代码的方式，首先接触到的就是一个我听说了很久但是一直没有搞明白，也一直没有用过的的概念——抽象类</p>
+<blockquote>
+<p>什么是抽象类</p>
+</blockquote>
+<p>先来一个官方一点的解释：<br>abstract关键字修饰的类称为抽象类，抽象类不能被实例化，抽象类是派生类的基类。<br>关键字：abstract<br>语法：<br>abstract class 类名<br>{<br>…………<br>}<br>1、一个抽象类可以同时包含抽象方法和非抽象方法。<br>2、抽象方法只在派生类中真正实现，这表明抽象方法只存放函数原型，不涉及主体代码，<br>3、派生自抽象类的类需要实现其基类的抽象方法，才能实例化对象。<br>4、使用override关键子可在派生类中实现抽象方法，经override声明重写的方法称为重写基类方法，其签名必须与override方法的签名相同。</p>
+<p>==<strong>说实话我觉得只知道概念真心没什么用啊！！！根本不知道怎么用，也不知道什么时候用</strong> #2196F3==</p>
+<p>让我理解的话大概就是:<strong>同样</strong>类型的对象需要做<strong>不同样</strong>的操作实现<strong>同样</strong>的目的</p>
+<p>可能这么说也不是很明白，那就举个例子说一下:比如说我想开个水果店，我需要进货和卖货，假设我只卖苹果和香蕉，那么我需要这么写</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FruitShop</span><span class="comment">//开一家水果店</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span>;<span class="comment">//进水果</span></span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span>;<span class="comment">//卖水果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为我进水果的方式不一样,我苹果是论斤进的，但是香蕉是论根进的，苹果是按斤卖的，香蕉是按根卖的</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对苹果的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Apple</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤进苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤卖苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//对香蕉的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Banana</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根进香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根卖香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以大概可能就是这么用的吧</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+        <tag>c#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C#PDF转图片</title>
+    <url>/2019/11/27/PDF%E8%BD%AC%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>做为一个小白程序员，没想到我曾经在博客园上写的东西也能够帮助到别人，这对于我来说还是挺开心的，所以我觉得把那篇文章copy一下，在自己的博客上再发一遍，没准能帮助到更多的人，嘿嘿！</p>
+<blockquote>
+<p>接下来进入到正文</p>
+</blockquote>
+<p>转换有两种方法：</p>
+<p>第一种是用O2S.Components.PDFRender4NET 大家可以去网上查找无水印版本 但是有的时候带颜色的字就变空白了 不知道为什么</p>
+<p>第二种是用PdfiumViewer 这种方法带颜色的字也可以转换 推荐使用</p>
+<p>下面贴代码</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PDFHelp</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 将PDF文档转换为图片的方法一</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="pdfInputPath"&gt;</span>PDF文件路径<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="imageOutputPath"&gt;</span>图片输出路径<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="imageName"&gt;</span>生成图片的名字<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="startPageNum"&gt;</span>从PDF文档的第几页开始转换<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="endPageNum"&gt;</span>从PDF文档的第几页开始停止转换<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="imageFormat"&gt;</span>设置所需图片格式<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="definition"&gt;</span>设置图片的清晰度，数字越大越清晰<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ConvertPDF2Image</span>(<span class="params"><span class="keyword">string</span> pdfInputPath, <span class="keyword">string</span> imageOutputPath,</span></span></span><br><span class="line"><span class="function"><span class="params">            <span class="keyword">string</span> imageName, <span class="keyword">int</span> startPageNum, <span class="keyword">int</span> endPageNum, ImageFormat imageFormat, <span class="keyword">int</span> definition</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            PDFFile pdfFile = PDFFile.Open(pdfInputPath);</span><br><span class="line">            <span class="keyword">if</span> (!Directory.Exists(imageOutputPath))</span><br><span class="line">            &#123;</span><br><span class="line">                Directory.CreateDirectory(imageOutputPath);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// validate pageNum</span></span><br><span class="line">            <span class="keyword">if</span> (startPageNum &lt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                startPageNum = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (endPageNum &gt; pdfFile.PageCount)</span><br><span class="line">            &#123;</span><br><span class="line">                endPageNum = pdfFile.PageCount;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (startPageNum &gt; endPageNum)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> tempPageNum = startPageNum;</span><br><span class="line">                startPageNum = endPageNum;</span><br><span class="line">                endPageNum = startPageNum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// start to convert each page</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = startPageNum; i &lt;= endPageNum; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                Bitmap pageImage = pdfFile.GetPageImage(i - <span class="number">1</span>, <span class="number">56</span> * (<span class="keyword">int</span>)definition);</span><br><span class="line">                pageImage.Save(imageOutputPath + imageName + i.ToString() + <span class="string">"."</span> + imageFormat.ToString(), imageFormat);</span><br><span class="line">                pageImage.Dispose();</span><br><span class="line">            &#125;</span><br><span class="line">            pdfFile.Dispose();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 将PDF转换为图片方法二</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="pdfPath"&gt;</span>pdf文件位置<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="pageNumber"&gt;</span>pdf文件张数<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="size"&gt;</span>pdf文件尺寸<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="outputPath"&gt;</span>输出图片位置与名称<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RenderPage</span>(<span class="params"><span class="keyword">string</span> pdfPath, <span class="keyword">int</span> pageNumber, System.Drawing.Size size, <span class="keyword">string</span> outputPath, <span class="keyword">int</span> dpi = <span class="number">300</span></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="meta">#<span class="meta-keyword">region</span> 调用方法</span></span><br><span class="line">            <span class="comment">//转一页的话直接调用RenderPage</span></span><br><span class="line">            <span class="comment">//转整个文档调用</span></span><br><span class="line">            <span class="comment">//var pdf = PdfDocument.Load(@"d://20190514174209.pdf");</span></span><br><span class="line">            <span class="comment">//var pdfpage = pdf.PageCount;</span></span><br><span class="line">            <span class="comment">//var pagesizes = pdf.PageSizes;</span></span><br><span class="line"> </span><br><span class="line">            <span class="comment">//for (int i = 1; i &lt;= pdfpage; i++)</span></span><br><span class="line">            <span class="comment">//&#123;</span></span><br><span class="line">            <span class="comment">//    Size size = new Size();</span></span><br><span class="line">            <span class="comment">//    size.Height = (int)pagesizes[(i - 1)].Height + 265;</span></span><br><span class="line">            <span class="comment">//    size.Width = (int)pagesizes[(i - 1)].Width + 405;</span></span><br><span class="line">            <span class="comment">//    PDFHelp.RenderPage(@"d://20190514174209.pdf", i, size, @"d://" + i + @".jpg");</span></span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">endregion</span></span></span><br><span class="line">            <span class="keyword">using</span> (<span class="keyword">var</span> document = PdfiumViewer.PdfDocument.Load(pdfPath))</span><br><span class="line">            <span class="keyword">using</span> (<span class="keyword">var</span> stream = <span class="keyword">new</span> FileStream(outputPath, FileMode.Create))</span><br><span class="line">            <span class="keyword">using</span> (<span class="keyword">var</span> image = GetPageImage(pageNumber, size, document, dpi))</span><br><span class="line">            &#123;</span><br><span class="line">                image.Save(stream, ImageFormat.Jpeg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Image <span class="title">GetPageImage</span>(<span class="params"><span class="keyword">int</span> pageNumber, Size size, PdfiumViewer.PdfDocument document, <span class="keyword">int</span> dpi</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">return</span> document.Render(pageNumber - <span class="number">1</span>, size.Width, size.Height, dpi, dpi, PdfRenderFlags.Annotations);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法的dll在nuget就可以下载 nuget安装dll</p>
+<p>Install-Package PdfiumViewer -Version 2.13.0</p>
+<p>Install-Package ImageResizer.Plugins.PdfiumRenderer.Pdfium.Dll -Version 1.0.1</p>
+<p>第二种方法源码下载:<a href="https://github.com/hopehero/PDFTest" target="_blank" rel="noopener">PDFTest</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+        <tag>c#</tag>
+      </tags>
+  </entry>
+</search>
