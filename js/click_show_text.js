@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
         $i.css({
             "z-index": 5,
             "top": y - 20,
-            "left": x,
+            "left": x + 20,
             "position": "absolute",
             "font-weight": "bold",
             "color": "#FF0000"
