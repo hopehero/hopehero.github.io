@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="想做英雄,"> 
-    <meta name="description" content="beizhushisha,待更新
-"> 
+    <meta name="description" content="beizhushisha,其实一开始我是把博客部署到github上的，但是国内最近访问简直慢得令人发指，然后我就寻找方法，发现了coding也支持hexo部署，在此感谢TRHX大佬的博客启发。
+部署到coding之前请先保证,"> 
     <meta name="author" content="H&amp;h"> 
     <link rel="alternative" href="atom.xml" title="想做英雄" type="application/atom+xml"> 
     <link rel="icon" href="/img/thumbnail.png"> 
@@ -66,7 +66,33 @@
 
         </div>
         <div class="content markdown">
-            <p>待更新</p>
+            <p>其实一开始我是把博客部署到github上的，但是国内最近访问简直慢得令人发指，然后我就寻找方法，发现了coding也支持hexo部署，在此感谢<a href="https://www.itrhx.com/2019/09/16/A47-hexo-deployed-to-github-and-coding/" target="_blank" rel="noopener">TRHX</a>大佬的博客启发。</p>
+<p>部署到coding之前请先保证你已经安装了hexo框架,我是直接安装到我本地的，不知道怎么安装的请先移至<a href="https://hexo.io" target="_blank" rel="noopener">hexo官网</a></p>
+<p>首先登录到<a href="https://coding.net/" target="_blank" rel="noopener">coding官网</a> 在我的项目里面选择新建项目</p>
+<p><img src="http://s1.wailian.download/2020/03/19/coding.png" alt="新建项目"></p>
+<p>这里选择的模板一定要是第三个 开始我就选了第一个 怎么找也没找到静态网页的功能</p>
+<p><img src="http://s1.wailian.download/2020/03/19/27666573d563770e7.png" alt="选择新建devops项目"></p>
+<p>填写项目名称完成创建</p>
+<p><img src="http://s1.wailian.download/2020/03/19/3d04dacbc584260c6.png" alt="完成创建"></p>
+<p>创建成功之后应该会看到如下界面 复制你的上传项目地址</p>
+<p><img src="http://s1.wailian.download/2020/03/19/6.png" alt="网站上传地址"></p>
+<p>修改hexo的_config.yml文件 在deploy下面的repo节点下新增coding 粘贴你的地址</p>
+<p><img src="http://s1.wailian.download/2020/03/19/7.png" alt="修改hexo配置文件"></p>
+<p>保存好配置文件之后 进入到博客所在文件夹打开powershell 输入命令</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g <span class="literal">-d</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://s1.wailian.download/2020/03/19/8.png" alt="运行hexo命令"></p>
+<p>不出意外的话回到coding就可以看到你推送过来的文件了 和github一样</p>
+<p><img src="http://s1.wailian.download/2020/03/19/9.png" alt="推送日志"></p>
+<p>进入到项目设置 选择静态网站 如果没有实名认证需要先进行一下实名认证</p>
+<p><img src="http://s1.wailian.download/2020/03/19/10.png" alt="选择静态网站"></p>
+<p>输入你的网站名称 选择刚才创建好的项目 触发机制选择自动部署 勾选代码更新时自动部署 或者按照你的爱好来就行</p>
+<p><img src="http://s1.wailian.download/2020/03/19/11.png" alt="新建静态网站"></p>
+<p>保存之后点击立即部署</p>
+<p><img src="http://s1.wailian.download/2020/03/19/12.png" alt="立即部署"></p>
+<p>大功告成,赶紧点击上图的连接看看你的博客吧</p>
+<p><img src="http://s1.wailian.download/2020/03/19/13.png" alt="完成"></p>
+<p>(ps:如果你有域名的话直接使用cname解析到这个地址就好了)</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
