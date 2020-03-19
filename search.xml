@@ -50,10 +50,10 @@
 <p>转载自博客园 <a href="https://www.cnblogs.com/hai-cheng/p/8670395.html" target="_blank" rel="noopener">原文地址</a></p>
 ]]></content>
       <categories>
-        <category>转载</category>
+        <category>windows</category>
       </categories>
       <tags>
-        <tag>windows</tag>
+        <tag>转载</tag>
       </tags>
   </entry>
   <entry>
@@ -99,11 +99,11 @@
 <p>所以大概可能就是这么用的吧</p>
 ]]></content>
       <categories>
-        <category>随笔</category>
-        <category>c#</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>后端</tag>
+        <tag>c#</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -125,11 +125,11 @@
 <p>第二种方法源码下载:<a href="https://github.com/hopehero/PDFTest" target="_blank" rel="noopener">PDFTest</a></p>
 ]]></content>
       <categories>
-        <category>教程</category>
-        <category>c#</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>后端</tag>
+        <tag>c#</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>
