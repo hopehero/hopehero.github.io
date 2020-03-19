@@ -32,10 +32,11 @@
 <p>(ps:如果你有域名的话直接使用cname解析到这个地址就好了)</p>
 ]]></content>
       <categories>
-        <category>技巧</category>
+        <category>windows</category>
       </categories>
       <tags>
         <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -75,10 +76,11 @@
 <p>点击配置文件–代理规则–添加 应用程序选ShadowsocksR-dotnet4.0.exe动作选Direct<br><img src="http://s1.wailian.download/2020/03/09/ce3689fd70239662df9e92bb6e55b8f3.png" alt="enter description here"><br>点击确定，再添加一个任意<br>动作选proxy sock5 127.0.0.1<br><img src="http://s1.wailian.download/2020/03/09/14300f057daf23baa.png" alt="enter description here"><br>大功告成 开始愉快的上网吧！(ps:如果软件本身支持代理方式联网的话可以不用Proxifier，例如微信，直接开启ShadowsocksR-dotnet4.0.exe 然后填写地址127.0.0.1和端口1080就可以上网了)</p>
 ]]></content>
       <categories>
-        <category>网络</category>
+        <category>windows</category>
       </categories>
       <tags>
-        <tag>windows</tag>
+        <tag>网络</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -128,8 +130,8 @@
         <category>后端</category>
       </categories>
       <tags>
+        <tag>教程4</tag>
         <tag>c#</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
 </search>
