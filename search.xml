@@ -53,7 +53,7 @@
         <category>转载</category>
       </categories>
       <tags>
-        <tag>技巧</tag>
+        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
@@ -78,7 +78,7 @@
         <category>网络</category>
       </categories>
       <tags>
-        <tag>技巧</tag>
+        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
@@ -94,16 +94,16 @@
 <p>可能这么说也不是很明白，那就举个例子说一下:比如说我想开个水果店，我需要进货和卖货，假设我只卖苹果和香蕉，那么我需要这么写</p>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">FruitShop</span><span class="comment">//开一家水果店</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span>;<span class="comment">//进水果</span></span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span>;<span class="comment">//卖水果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为我进水果的方式不一样,我苹果是论斤进的，但是香蕉是论根进的，苹果是按斤卖的，香蕉是按根卖的</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对苹果的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Apple</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤进苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤卖苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//对香蕉的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Banana</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根进香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根卖香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对苹果的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Apple</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤进苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论斤卖苹果 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//对香蕉的操作类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Banana</span>:<span class="title">FruitShop</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">BuyFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根进香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">override</span>  <span class="keyword">void</span> <span class="title">SellFruit</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="comment">//这里写怎么论根卖香蕉 </span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>所以大概可能就是这么用的吧</p>
 ]]></content>
       <categories>
         <category>随笔</category>
+        <category>c#</category>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>c#</tag>
       </tags>
   </entry>
   <entry>
@@ -126,10 +126,10 @@
 ]]></content>
       <categories>
         <category>教程</category>
+        <category>c#</category>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>c#</tag>
       </tags>
   </entry>
 </search>
