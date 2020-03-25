@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>(转载)正向代理与反向代理的区别</title>
+    <url>/2020/03/25/(%E8%BD%AC%E8%BD%BD)%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<blockquote>
+<p>之前对正向代理和反向代理的概念一直模棱两可，虽然会用，但是说不清道不明的，今天偶然在简书上看见了这篇文章，感觉总结的相当到位，就转载过来，好记性不如烂笔头嘛</p>
+</blockquote>
+<p><strong>1. 概念</strong><br>　　正向代理是一个位于客户端和目标服务器之间的代理服务器(中间服务器)。为了从原始服务器取得内容，客户端向代理服务器发送一个请求，并且指定目标服务器，之后代理向目标服务器转交并且将获得的内容返回给客户端。正向代理的情况下客户端必须要进行一些特别的设置才能使用。</p>
+<p>  反向代理正好相反。对于客户端来说，反向代理就好像目标服务器。并且客户端不需要进行任何设置。客户端向反向代理发送请求，接着反向代理判断请求走向何处，并将请求转交给客户端，使得这些内容就好似他自己一样，一次客户端并不会感知到反向代理后面的服务，也因此不需要客户端做任何设置，只需要把反向代理服务器当成真正的服务器就好了。</p>
+<p><strong>2. 区别</strong><br>　　正向代理需要你主动设置代理服务器ip或者域名进行访问，由设置的服务器ip或者域名去获取访问内容并返回；而反向代理不需要你做任何设置，直接访问服务器真实ip或者域名，但是服务器内部会自动根据访问内容进行跳转及内容返回，你不知道它最终访问的是哪些机器。</p>
+<p>  正向代理是代理客户端，为客户端收发请求，使真实客户端对服务器不可见；而反向代理是代理服务器端，为服务器收发请求，使真实服务器对客户端不可见。</p>
+<p>  从上面的描述也能看得出来正向代理和反向代理最关键的两点区别：</p>
+<ul>
+<li><p>是否指定目标服务器</p>
+</li>
+<li><p>客户端是否要做设置</p>
+</li>
+</ul>
+<p>  下面用一张图来表示两者的差异：</p>
+<p><img src="http://s1.wailian.download/2020/03/25/da57cf56dc1447de89985920ba2d075e.png" alt="正向代理与反向代理"></p>
+<p>​        正向代理中，proxy和client同属一个LAN，对server透明； 反向代理中，proxy和server同属一个LAN，对client透明。 实际上proxy在两种代理中做的事都是代为收发请求和响应，不过从结构上来看正好左右互换了下，所以把前者那种代理方式叫做正向代理，后者叫做反向代理。</p>
+<p>从用途上来区分：</p>
+<ul>
+<li>正向代理：正向代理用途是为了在防火墙内的局域网提供访问internet的途径。另外还可以使用缓冲特性减少网络使用率</li>
+<li>反向代理：反向代理的用途是将防火墙后面的服务器提供给internet用户访问。同时还可以完成诸如负载均衡等功能</li>
+</ul>
+<p>从安全性来讲：</p>
+<ul>
+<li>正向代理：正向代理允许客户端通过它访问任意网站并且隐蔽客户端自身，因此你必须采取安全措施来确保仅为经过授权的客户端提供服务</li>
+<li>反向代理：对外是透明的，访问者并不知道自己访问的是代理。对访问者而言，他以为访问的就是原始服务器</li>
+</ul>
+<p><strong>3. 使用场景</strong></p>
+<p>​        正向代理的典型用途是为在防火墙内的局域网客户端提供访问Internet的途径。正向代理还可以使用缓冲特性减少网络使用率。反向代理的典型用途是将 防火墙后面的服务器提供给Internet用户访问。反向代理还可以为后端的多台服务器提供负载平衡，或为后端较慢的服务器提供缓冲服务。</p>
+<h5 id="3-1-正向代理"><a href="#3-1-正向代理" class="headerlink" title="3.1 正向代理"></a>3.1 正向代理</h5><p>​        从上面的介绍也就可以猜出来正向代理的至少一个功能（俗称翻墙），也即：</p>
+<p>  用户A无法访问facebook，但是能访问服务器B，而服务器B可以访问facebook。于是用户A访问服务器B，通过服务器B去访问facebook，，服务器B收到请求后，去访问facebook，facebook把响应信息返回给服务器B，服务器B再把响应信息返回给A。这样，通过代理服务器B，就实现了翻墙。</p>
+<h5 id="3-2-反向代理"><a href="#3-2-反向代理" class="headerlink" title="3.2 反向代理"></a>3.2 反向代理</h5><p>从上面的介绍也可以猜出来反向代理的至少一个功能（比如负载均衡），也即：</p>
+<p>  假设用户A访问 <strong><a href="http://www.somesite.com/something.html" target="_blank" rel="noopener">http://www.somesite.com/something.html</a></strong>，但<a href="http://www.somesite.com" target="_blank" rel="noopener">www.somesite.com</a>上并不存在something.html页面，于是接收用户请求的该服务器就偷偷从另外一台服务器上取回来，然后返回给用户，而用户并不知道something.html页面究竟位于哪台机器上。</p>
+<p>  反向代理的作用就比较多了，这里简单列举一下：</p>
+<ul>
+<li>保护和隐藏原始资源服务器</li>
+<li>加密和SSL加速</li>
+<li>负载均衡</li>
+<li>缓存静态内容</li>
+<li>压缩</li>
+<li>减速上传</li>
+<li>安全</li>
+<li>外网发布</li>
+</ul>
+<p>下面做两个简单介绍</p>
+<h4 id="保护和隐藏原始资源服务器"><a href="#保护和隐藏原始资源服务器" class="headerlink" title="保护和隐藏原始资源服务器"></a>保护和隐藏原始资源服务器</h4><p><img src="http://s1.wailian.download/2020/03/25/782a69e64d78a772d441c6ec794ded0b.png" alt="保护和隐藏资源服务器"></p>
+<p>用户A始终认为它访问的是原始服务器B而不是代理服务器Z，但实用际上反向代理服务器接受用户A的应答，从原始资源服务器B中取得用户A的需求资源，然后发送给用户A。由于防火墙的作用，只允许代理服务器Z访问原始资源服务器B。尽管在这个虚拟的环境下，防火墙和反向代理的共同作用保护了原始资源服务器B，但用户A并不知情。</p>
+<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p><img src="http://s1.wailian.download/2020/03/25/db884a23908ddceb397b527cfb2d0d0b.png" alt="负载均衡"></p>
+<p>当反向代理服务器不止一个的时候，我们甚至可以把它们做成集群，当更多的用户访问资源服务器B的时候，让不同的代理服务器Z（x）去应答不同的用户，然后发送不同用户需要的资源。</p>
+<h5 id="3-3-透明代理"><a href="#3-3-透明代理" class="headerlink" title="3.3 透明代理"></a>3.3 透明代理</h5><p>透明代理比较类似正向代理的功能，差别在于客户端根本不知道代理的存在，它改编你的request，并会传送真实IP（使用场景就是公司限制网络的访问）。</p>
+<p>  比如为了工作效率或者安全，A公司屏蔽了QQ软件的使用。A公司的员工接上了网络，但发现无法使用qq。这就是透明代理捣的鬼。公司在内网和外网的中间插入一个透明代理，这个代理会根据规则抓取请求内容，遇到qq的请求我就把这个请求给屏蔽掉，这样就完成了透明屏蔽。当然了，如果你明白原理，就可以自己搞个正向代理来绕过公司的屏蔽。</p>
+<blockquote>
+<p>以上是第一篇比较学术型的解释，接下来是比较浅显易懂的，转自<a href="http://mp.weixin.qq.com/s/ikrI3rmSYs83wdSWqq2QIg" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/ikrI3rmSYs83wdSWqq2QIg</a></p>
+</blockquote>
+<p>Nginx作为时下最流行的HTTP服务器之一，同时它是一个反向代理服务器，提到反向代理服务器，有同学可能觉得这个概念很模糊，如果说到代理，他可能明白，但是再引出一个正向代理，估计懵了，笔者将尝试用浅显易懂的比方把这两个概念解释清楚</p>
+<h1 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h1><p>A同学在大众创业、万众创新的大时代背景下开启他的创业之路，目前他遇到的最大的一个问题就是启动资金，于是他决定去找马云爸爸借钱，可想而知，最后碰一鼻子灰回来了，情急之下，他想到一个办法，找关系开后门，经过一番消息打探，原来A同学的大学老师王老师是马云的同学，于是A同学找到王老师，托王老师帮忙去马云那借500万过来，当然最后事成了。不过马云并不知道这钱是A同学借的，马云是借给王老师的，最后由王老师转交给A同学。这里的王老师在这个过程中扮演了一个非常关键的角色，就是代理，也可以说是正向代理，王老师代替A同学办这件事，这个过程中，真正借钱的人是谁，马云是不知道的，这点非常关键。</p>
+<p>  我们常说的代理也就是只正向代理，正向代理的过程，它隐藏了真实的请求客户端，服务端不知道真实的客户端是谁，客户端请求的服务都被代理服务器代替来请求，知名的科学上网工具shadowsocks 扮演的就是典型的正向代理角色。在天朝用浏览器访问 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 时，被残忍的拒绝了，于是你可以在国外搭建一台代理服务器，让代理帮我去请求<a href="http://google.com" target="_blank" rel="noopener">google.com</a>，代理把请求返回的相应结构再返回给我。</p>
+<p><img src="http://s1.wailian.download/2020/03/25/e2492af6ee747e57e8fdcac5107d9ee4.png" alt="正向代理"></p>
+<h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><p>大家都有过这样的经历，拨打10086客服电话，可能一个地区的10086客服有几个或者几十个，你永远都不需要关心在电话那头的是哪一个，叫什么，男的，还是女的，漂亮的还是帅气的，你都不关心，你关心的是你的问题能不能得到专业的解答，你只需要拨通了10086的总机号码，电话那头总会有人会回答你，只是有时慢有时快而已。那么这里的10086总机号码就是我们说的反向代理。客户不知道真正提供服务人的是谁。</p>
+<p>  反向代理隐藏了真实的服务端，当我们请求 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 的时候，就像拨打10086一样，背后可能有成千上万台服务器为我们服务，但具体是哪一台，你不知道，也不需要知道，你只需要知道反向代理服务器是谁就好了，<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 就是我们的反向代理服务器，反向代理服务器会帮我们把请求转发到真实的服务器那里去。Nginx就是性能非常好的反向代理服务器，用来做负载均衡。</p>
+<p><img src="http://s1.wailian.download/2020/03/25/af8af2497a850019af89f4b52783f5fd.png" alt="反向代理"></p>
+<p>两者的区别在于代理的对象不一样：正向代理代理的对象是客户端，反向代理代理的对象是服务端</p>
+<p>转载自简书 <a href="https://www.jianshu.com/p/208c02c9dd1d" target="_blank" rel="noopener">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>转载</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>将Hexo博客部署到新版coding上</title>
     <url>/2020/03/17/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%96%B0%E7%89%88coding%E4%B8%8A/</url>
     <content><![CDATA[<p>其实一开始我是把博客部署到github上的，但是国内最近访问简直慢得令人发指，然后我就寻找方法，发现了coding也支持hexo部署，在此感谢<a href="https://www.itrhx.com/2019/09/16/A47-hexo-deployed-to-github-and-coding/" target="_blank" rel="noopener">TRHX</a>大佬的博客启发。</p>
@@ -42,9 +116,9 @@
   <entry>
     <title>(转载)nssm 在windows上部署服务 感觉比winsw好用？</title>
     <url>/2020/03/13/(%E8%BD%AC%E8%BD%BD)nssm%20%E5%9C%A8windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%20%E6%84%9F%E8%A7%89%E6%AF%94winsw%E5%A5%BD%E7%94%A8/</url>
-    <content><![CDATA[<p><strong>简介</strong><br>　　NSSM是一款可将Nodejs项目注册为Windows系统服务的工具。当你的Node.js项目需要部署在Windows Server上时，NSSM是一个不错的选择。</p>
+    <content><![CDATA[<p><strong>简介</strong><br>　　<a href="http://www.nssm.cc/" target="_blank" rel="noopener">NSSM</a>是一款可将Nodejs项目注册为Windows系统服务的工具。当你的Node.js项目需要部署在Windows Server上时，NSSM是一个不错的选择。</p>
 <p><strong>特点</strong><br>　　NSSM将Node.js项目注册为服务后，启动、停止、重启皆由windows来管理，所以我们不必担心NSSM无法处理项目因意外的停止，而Windows的服务管理即可处理这些问题。</p>
-<p><strong>使用</strong><br>1.下载NSSM       download.<br>2.根据自己的平台，将32/64位nssm.exe文件解压至任意文件夹。<br>3.cmd定位至nssm.exe所在目录。<br>4.输入 nssm install {服务名称}，即注册服务的名称。注册服务弹出如下NSSM界面。<img src="http://s1.wailian.download/2020/03/13/1.png" alt="enter description here"><img src="http://s1.wailian.download/2020/03/13/3.png" alt="enter description here"><br>5.Application标签设置：</p>
+<p><strong>使用</strong><br>1.下载NSSM       [download][<a href="http://www.nssm.cc/release/nssm-2.24.zip]" target="_blank" rel="noopener">http://www.nssm.cc/release/nssm-2.24.zip]</a>.<br>2.根据自己的平台，将32/64位nssm.exe文件解压至任意文件夹。<br>3.cmd定位至nssm.exe所在目录。<br>4.输入 nssm install {服务名称}，即注册服务的名称。注册服务弹出如下NSSM界面。<img src="http://s1.wailian.download/2020/03/13/1.png" alt="enter description here"><img src="http://s1.wailian.download/2020/03/13/3.png" alt="enter description here"><br>5.Application标签设置：</p>
 <p>Application Path: 选择系统安装的node.exe。<br>Startup directory: 选择nodejs项目的根目录。<br>Arguments: 输入启动参数，如默认的express项目的参数为./bin/www<br>6.上述步骤操作完成，即可点击Install service来注册服务。我们在系统的服务中即可找到刚刚注册的服务。<br>7.在系统服务中找到刚刚注册的服务，右键属性 - 恢复即可设置此服务挂掉重启等内容。</p>
 <p>nssm常用命令：</p>
 <p>nssm install servername //创建servername服务<br>nssm start servername //启动服务<br>nssm stop servername //暂停服务<br>nssm restart servername //重新启动服务<br>nssm remove servername //删除创建的servername服务</p>
