@@ -5,12 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>想做英雄 - hope to be hero</title>
+    <title>unity学习笔记-YourFirstGame1 - 想做英雄</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="想做英雄,"> 
-    <meta name="description" content="beizhushisha,"> 
+    <meta name="description" content="beizhushisha,简介
+
+本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(M_Studio)在B站发的Unity教程 Your First Game
+
+一､安装unity　　这个我就不多说了,"> 
     <meta name="author" content="H&amp;h"> 
     <link rel="alternative" href="atom.xml" title="想做英雄" type="application/atom+xml"> 
     <link rel="icon" href="/img/thumbnail.png"> 
@@ -36,27 +40,114 @@
 <body class="loading">
     <span id="config-title" style="display:none">想做英雄</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
-    </div>
-    <div class="section">
-        <div class="article">
-            <div class="main">
-                <div class="content">
-                
-                    <div class="set">
-  <h2>分类</h2>
-  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c#</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/c/unity/">unity</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a><span class="category-list-count">1</span></li></ul>
-</div>
-
-                
-                </div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://xn--cyq871b6uz9tq.top"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">unity学习笔记-YourFirstGame1</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
+            <div id="qr"></div>
         </div>
     </div>
+    <div class="scrollbar"></div>
 </div>
 
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">unity学习笔记-YourFirstGame1</h1>
+        <div class="stuff">
+            <span>六月 16, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/YourFirstGame/" rel="tag">YourFirstGame</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><strong>简介</strong></p>
+<blockquote>
+<p>本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(<a href="https://space.bilibili.com/370283072" target="_blank" rel="noopener">M_Studio</a>)在B站发的<a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">Unity教程 Your First Game</a></p>
+</blockquote>
+<p><strong><em>一､安装unity</em></strong><br>　　这个我就不多说了，官网在这，大家根据自己的需要进行下载<a href="https://unity.cn/" target="_blank" rel="noopener">unity中国官网</a></p>
+<p><strong><em>二､新建项目</em></strong></p>
+<p>打开unity Hub，选择项目-点击创建-输入项目名称-FirstGame</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame1.png" alt="FirstGame1"></p>
+<p>稍等一会 进入到unity编辑页面</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame2.png" alt="FirstGame2"></p>
+<p>窗口说明:</p>
+<p>Hierarchy:代表我们所有创建的项目所生成的GameObject 默认只有一个主摄像机</p>
+<p>project:存放我们资源文件的窗口</p>
+<p>Scene:编辑游戏场景</p>
+<p>Game:实际游戏的样子预览</p>
+<p>Inspector:项目检查窗口 主要是编辑gameobject的属性</p>
+<p><strong><em>三､导入素材</em></strong></p>
+<p>点击asset Store 下载我们需要的素材 然后导入到unity</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame3.png" alt="FirstGame3"></p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame4.png" alt="FirstGame4"></p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame5.png" alt="FirstGame5"></p>
+<p>导入之后会在project面板下面生成Sunnyland文件夹 这个文件夹就是所有的资源文件</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame6.png" alt="FirstGame6"></p>
+<p>第一节课到这里 <a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">原视频地址</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/1370007645.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/1359356908.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='https://link.hhtjim.com/163/1385110642.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='https://link.hhtjim.com/163/1407551413.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='https://link.hhtjim.com/163/1313354324.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='https://link.hhtjim.com/163/1365914380.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci='50f99ee7679f0759d73b'
+        data-cs='59cfbdd693f2d776226bf5fe09ce08f16032980c'
+        data-r='gittalk'
+        data-o='hopehero'
+        data-a='hopehero'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
     <!-- 引入jqurey -->
     <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
     <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>

@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>unity学习笔记-YourFirstGame1</title>
+    <url>/2020/06/16/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame1/</url>
+    <content><![CDATA[<p><strong>简介</strong></p>
+<blockquote>
+<p>本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(<a href="https://space.bilibili.com/370283072" target="_blank" rel="noopener">M_Studio</a>)在B站发的<a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">Unity教程 Your First Game</a></p>
+</blockquote>
+<p><strong><em>一､安装unity</em></strong><br>　　这个我就不多说了，官网在这，大家根据自己的需要进行下载<a href="https://unity.cn/" target="_blank" rel="noopener">unity中国官网</a></p>
+<p><strong><em>二､新建项目</em></strong></p>
+<p>打开unity Hub，选择项目-点击创建-输入项目名称-FirstGame</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame1.png" alt="FirstGame1"></p>
+<p>稍等一会 进入到unity编辑页面</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame2.png" alt="FirstGame2"></p>
+<p>窗口说明:</p>
+<p>Hierarchy:代表我们所有创建的项目所生成的GameObject 默认只有一个主摄像机</p>
+<p>project:存放我们资源文件的窗口</p>
+<p>Scene:编辑游戏场景</p>
+<p>Game:实际游戏的样子预览</p>
+<p>Inspector:项目检查窗口 主要是编辑gameobject的属性</p>
+<p><strong><em>三､导入素材</em></strong></p>
+<p>点击asset Store 下载我们需要的素材 然后导入到unity</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame3.png" alt="FirstGame3"></p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame4.png" alt="FirstGame4"></p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame5.png" alt="FirstGame5"></p>
+<p>导入之后会在project面板下面生成Sunnyland文件夹 这个文件夹就是所有的资源文件</p>
+<p><img src="http://s1.wailian.download/2020/06/16/FirstGame6.png" alt="FirstGame6"></p>
+<p>第一节课到这里 <a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">原视频地址</a></p>
+]]></content>
+      <categories>
+        <category>c#</category>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>YourFirstGame</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.NET(C#) C#8.0中新语法&quot;is {}&quot;介绍及使用示例代码</title>
+    <url>/2020/05/27/%E6%96%B0%E8%AF%AD%E6%B3%95is/</url>
+    <content><![CDATA[<p><strong>简介</strong></p>
+<blockquote>
+<p>本文主要介绍.NET(C#)中，C# 7.0中及以is的用法和C# 8.0的is新语法:“is {}”使用介绍，以及使用示例代码。</p>
+</blockquote>
+<p><strong><em>一､C#7.0及之前is的使用*</em></strong><br>　　<code>is</code>操作符检查表达式的结果是否与给定类型兼容，或者(从c# 7.0开始)根据模式测试表达式。有关类型测试<code>is</code>操作符的信息，请参阅类型<a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast" target="_blank" rel="noopener">测试和类型转换操作符</a>文章的<a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#is-operator" target="_blank" rel="noopener">is操作符</a>部分</p>
+<p><strong>1､is 模式匹配</strong></p>
+<p>从C＃7.0开始，<code>is</code>和<code>switch</code>语句支持模式匹配。该<code>is</code>关键字支持以下模式：</p>
+<p><strong>Type模式</strong>：它测试表达式是否可以转换为指定的类型，如果可以，则将其强制转换为该类型的变量。</p>
+<p><strong>(Constant)常量模式</strong>：用于测试表达式是否求值为指定的常量值。</p>
+<p><strong>var模式</strong>：匹配成功并且将表达式的值绑定到新的局部变量的匹配。</p>
+<p>从C＃7.1开始，<code>expr</code>可能具有由通用类型参数及其约束定义的编译时类型。<br>如果<code>expr</code>是<code>true</code>并且<code>is</code>与<code>if</code>语句一起使用，则<code>varname</code>仅在if语句内分配。<code>varname</code>的范围是从<code>is</code>表达式到包含<code>if</code>语句的块末尾。在其他任何位置使用<code>varname</code>会导致使用尚未分配的变量时产生编译时错误。</p>
+<p><strong>1) Type模式</strong></p>
+<p>使用类型模式执行模式匹配时，<code>is</code>测试表达式是否可以转换为指定的类型，如果可以，将其强制转换为该类型的变量。这是对<code>is</code>语句的直接扩展，可以实现简洁的类型评估和转换。is类型模式的一般形式是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">expr is type varname</span><br></pre></td></tr></table></figure>
+
+<p>下面的示例使用is类型模式提供类型的<a href="https://docs.microsoft.com/en-us/dotnet/api/system.icomparable.compareto#System_IComparable_CompareTo_System_Object_" target="_blank" rel="noopener">IComparable.CompareTo（Object）</a>方法的实现。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line"></span><br><span class="line">public class Employee : IComparable</span><br><span class="line">&#123;</span><br><span class="line">    public String Name &#123; get; set; &#125;</span><br><span class="line">    public int Id &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">    public int CompareTo(Object o)</span><br><span class="line">    &#123;</span><br><span class="line">        if (o is Employee e)</span><br><span class="line">        &#123;</span><br><span class="line">            return Name.CompareTo(e.Name);</span><br><span class="line">        &#125;</span><br><span class="line">        throw new ArgumentException(&quot;o is not an Employee object.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2) (Constant)常量模式</strong></p>
+<p>使用常量模式执行模式匹配时，is测试表达式是否等于指定的常量。在C＃6和更早版本中，<a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch" target="_blank" rel="noopener">switch</a>语句支持常量模式。从C＃7.0开始，该is语句也支持它。其语法为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">expr is constant</span><br></pre></td></tr></table></figure>
+
+<p>以下示例将类型和常量模式组合在一起，以测试对象是否为Dice实例，如果是，则确定掷骰的值是否为6。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">public class Dice</span><br><span class="line">&#123;</span><br><span class="line">    Random rnd &#x3D; new Random();</span><br><span class="line">    public Dice()</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public int Roll()</span><br><span class="line">    &#123;</span><br><span class="line">        return rnd.Next(1, 7); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        var d1 &#x3D; new Dice();</span><br><span class="line">        ShowValue(d1);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void ShowValue(object o)</span><br><span class="line">    &#123;</span><br><span class="line">        const int HIGH_ROLL &#x3D; 6;</span><br><span class="line">        if (o is Dice d &amp;&amp; d.Roll() is HIGH_ROLL)</span><br><span class="line">            Console.WriteLine($&quot;The value is &#123;HIGH_ROLL&#125;!&quot;);</span><br><span class="line">        else</span><br><span class="line">            Console.WriteLine($&quot;The dice roll is not a &#123;HIGH_ROLL&#125;!&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; The example displays output like the following:</span><br><span class="line">&#x2F;&#x2F;      The value is 6!</span><br></pre></td></tr></table></figure>
+
+<p><code>null</code>可以使用 (Constant)常量进行检查。该语句<code>null</code>支持关键字<code>is</code>。其语法为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">expr is null</span><br></pre></td></tr></table></figure>
+
+<p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        object o &#x3D; null;</span><br><span class="line">        if (o is null)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;o does not have a value&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;o is &#123;o&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        int? x &#x3D; 10;</span><br><span class="line">        if (x is null)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;x does not have a value&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;x is &#123;x.Value&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; &#39;null&#39; check comparison</span><br><span class="line">        Console.WriteLine($&quot;&#39;is&#39; constant pattern &#39;null&#39; check result : &#123; o is null &#125;&quot;);</span><br><span class="line">        Console.WriteLine($&quot;object.ReferenceEquals &#39;null&#39; check result : &#123; object.ReferenceEquals(o, null) &#125;&quot;);</span><br><span class="line">        Console.WriteLine($&quot;Equality operator (&#x3D;&#x3D;) &#39;null&#39; check result : &#123; o &#x3D;&#x3D; null &#125;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; The example displays the following output:</span><br><span class="line">    &#x2F;&#x2F; o does not have a value</span><br><span class="line">    &#x2F;&#x2F; x is 10</span><br><span class="line">    &#x2F;&#x2F; &#39;is&#39; constant pattern &#39;null&#39; check result : True</span><br><span class="line">    &#x2F;&#x2F; object.ReferenceEquals &#39;null&#39; check result : True</span><br><span class="line">    &#x2F;&#x2F; Equality operator (&#x3D;&#x3D;) &#39;null&#39; check result : True</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3) var模式</strong></p>
+<p>与var模式匹配的模式总是成功。它的语法是:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">expr is var varname</span><br></pre></td></tr></table></figure>
+
+<p><code>expr</code>的值总是分配给一个名为<code>varname</code>的局部变量。<code>varname</code>是与<code>expr</code>的编译时类型相同的变量。</p>
+<p>如果<code>expr</code>的计算结果为<code>null</code>，则<code>is</code>表达式生成<code>true</code>并将<code>null</code>赋值给<code>varname</code>。var模式是<code>is</code>为数不多的对空值产生<code>true</code>的用法之一。</p>
+<p>你可以使用var模式在一个布尔表达式中创建一个临时变量，如下面的例子所示:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        int[] testSet &#x3D; &#123; 100271, 234335, 342439, 999683 &#125;;</span><br><span class="line">        var primes &#x3D; testSet.Where(n &#x3D;&gt; Factor(n).ToList() is var factors</span><br><span class="line">                                    &amp;&amp; factors.Count &#x3D;&#x3D; 2</span><br><span class="line">                                    &amp;&amp; factors.Contains(1)</span><br><span class="line">                                    &amp;&amp; factors.Contains(n));</span><br><span class="line">        foreach (int prime in primes)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine($&quot;Found prime: &#123;prime&#125;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static IEnumerable&lt;int&gt; Factor(int number) </span><br><span class="line">    &#123;</span><br><span class="line">        int max &#x3D; (int)Math.Sqrt(number);</span><br><span class="line">        for (int i &#x3D; 1; i &lt;&#x3D; max; i++) </span><br><span class="line">        &#123;</span><br><span class="line">            if (number % i &#x3D;&#x3D; 0)</span><br><span class="line">            &#123;</span><br><span class="line">                yield return i;</span><br><span class="line">                if (i !&#x3D; number &#x2F; i) </span><br><span class="line">                &#123;</span><br><span class="line">                    yield return number &#x2F; i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; The example displays the following output:</span><br><span class="line">&#x2F;&#x2F;       Found prime: 100271</span><br><span class="line">&#x2F;&#x2F;       Found prime: 999683</span><br></pre></td></tr></table></figure>
+
+<p><strong>二、C# 8.0中is的新语法</strong></p>
+<p><strong>属性模式</strong></p>
+<p>匹配任何非<code>&quot;null&quot;</code>且属性设置为Length为2的对象，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (value is &#123; Length: 2 &#125;)</span><br><span class="line">&#123; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现验证的示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public async Task&lt;IActionResult&gt; Update(string id, ...) </span><br><span class="line">&#123;</span><br><span class="line">    if (ValidateId(id) is &#123; &#125; invalid)</span><br><span class="line">        return invalid;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子中，<code>ValidateId()</code>可以返回<code>null</code>或<code>BadObjectRequestResult</code>的一个实例。如果返回了前者，验证就成功了，并转移到更新主体的其余部分。如果返回的是后者，则<code>is{}</code>为真(也就是说，当然<code>BadObjectRequestResult</code>的实例是一个对象)，验证失败。</p>
+<p>如果使用一般写法做个判断，可能需要更多的代码，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public async Task&lt;IActionResult&gt; Update(string id, ...) </span><br><span class="line">&#123;</span><br><span class="line">    var invalid &#x3D; ValidateId(id);</span><br><span class="line">    if (invalid !&#x3D; null)</span><br><span class="line">        return invalid;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>相关文档</strong>：<a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/is#type-pattern" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/is#type-pattern</a></p>
+<p>转载自编程之路 <a href="https://www.cjavapy.com/article/615/" target="_blank" rel="noopener">原文地址</a></p>
+]]></content>
+      <categories>
+        <category>c#</category>
+      </categories>
+      <tags>
+        <tag>转载</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>c#当实体类属性和Json字符串字段名与数据库列名不一致时获取映射列名的方法</title>
     <url>/2020/04/17/%E5%AE%9E%E4%BD%93%E7%B1%BB%E6%98%A0%E5%B0%84%E5%88%97%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>今天遇到了一个很恶心的事，数据库列名都是带下划线“_”的，使用公司类库的方法取值取出来的字段都是带下划线的json，但是c#属性命名规范这么起名很糟心，于是去网上查找发现c#自带将json列名映射到属性的特性。</p>
