@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>unity学习笔记-YourFirstGame3</title>
+    <url>/2020/06/18/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame3/</url>
+    <content><![CDATA[<p>简介</p>
+<blockquote>
+<p>本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(<a href="https://space.bilibili.com/370283072" target="_blank" rel="noopener">M_Studio</a>)在B站发的<a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">Unity教程 Your First Game</a>，笔记内容没那么详细，仅供复习使用，学习请前往观看麦可老师的视频</p>
+</blockquote>
+<p>麦可老师在这节课主要讲了图层Layer以及角色创建</p>
+<p><strong><em>一､sorting layer设置</em></strong><br>　　首先点击Hierarchy窗口 点击back物体 选中inspector 启用属性 这时候我们会发现之前画的地图被背景图片挡住了</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame31.png" alt=""></p>
+<p>接下来点击inspector里面的 sorting layer下拉添加新的add sorting layer</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame32.png" alt=""></p>
+<p>添加两个图层 Background，Frontground</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame33.png" alt=""></p>
+<p>然后回到hierarchy窗口 点击选中back物体 更改他的sorting layer属性为background</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame34.png" alt=""></p>
+<p>再选中grid下面的tilemap物体 更改它的sorting layer属性为frontground</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame35.png" alt=""></p>
+<p>sorting layer里面的图层在下面的图层显示在游戏窗口的上面，比如这里tilemap对应的frontground所在layer在back的background下面，但是tilemap这个物体却显示在back上面，如果两个物体的sorting layer是一个图层，那么可以通过调节下面的order in layer决定谁显示在上面，值大的在上面</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame36.png" alt=""></p>
+<p><strong>二､添加游戏角色</strong></p>
+<p>找到角色 位置在</p>
+<p>Assets/Sunnyland/artwork/Sprites/player/idle/player-idle-1.png</p>
+<p>点击角色图片 将其像素单位设置为16 点击apply</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame37.png" alt=""></p>
+<p>首先选中角色图片 将其直接拖入到游戏场景scene中，这时候是看不见我们的人物的，接下来需要点击hierarchy窗口，选中游戏角色，将属性的sorting layer修改为frontground</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame38.png" alt=""></p>
+<p>然后再修改角色物体的命名，将其修改为Player，点击Transform快捷操作，重置角色的坐标</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame39.png" alt=""></p>
+<p><strong>三､为角色添加刚体组件</strong></p>
+<p>选中player物体，在属性面板中点击Add Component，搜索rigid，即可看到rigidbody 2D组件，点击即可添加，现在我们的player就不是一个纸片人了，而是一个带重力的物体了，重力属性为rigidbody2d的Gravity Scale</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame310.png" alt=""></p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame311.png" alt=""></p>
+<p>然后点击开始游戏按钮，会发现player可以穿过我们画的地图 这是因为他还没有任何碰撞体</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame312.png" alt=""></p>
+<p><strong>四､添加碰撞体</strong></p>
+<p>和添加刚体一样，选中player，在右侧属性面板中点击Add Component，添加一个Box collider 2D</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame313.png" alt=""></p>
+<p>这时候player就有了碰撞体，但是碰撞体的大小还不符合，所以需要点击Box collider 2D下面的Edit Collider来修改碰撞体大小，这里我修改为和player一样大</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame314.png" alt=""></p>
+<p>同样的方法 还需要为地面添加一个碰撞体，tilemap有单独的碰撞体组件（如果用Box collider 2D一个一个添加会累死人），选中Tilemap物体，点击Add Component，添加一个Tilemap Colloder 2D</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame315.png" alt=""></p>
+<p>这时候会发现所有的tilemap都生成了绿色的小框框</p>
+<p><img src="http://s1.wailian.download/2020/06/18/FirstGame316.png" alt=""></p>
+<p>然后运行游戏 player就会落到地面了</p>
+<p>第三节课到这里 <a href="https://www.bilibili.com/video/BV1r4411Z7dD" target="_blank" rel="noopener">原视频地址</a></p>
+]]></content>
+      <categories>
+        <category>c#</category>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>YourFirstGame</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>unity学习笔记-YourFirstGame2</title>
     <url>/2020/06/17/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame2/</url>
     <content><![CDATA[<p>简介</p>
