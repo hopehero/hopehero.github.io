@@ -75,33 +75,33 @@
 </blockquote>
 <p>麦可老师这节课主要讲了使用 Tilemap 开始绘制场景</p>
 <p><em>一､选择背景图片</em><br>　　首先点击project窗口 找到要用的背景图片，图片位置在assets/sunnyland/artwork/environment文件夹下面,文件名为back，将图片的像素点（pixels per unit）单位设置成16，点击apply</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKECDvtbcCviaj3B59cOzMLp7cJ5QnQXCvj7h6ibQxGKNfR8MlylP0EGXg/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame21.png" alt="img"></p>
 <p><em>二､将背景图片拖拽到Hierarchy窗口中</em></p>
 <p>拖入之后会在场景里显示背景图片 可以滑到鼠标滚轮来调整图片大小</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKDf8C0Fz8NkXMicPn8zyVSxGepzX2PFccX2uiaySvqrPL7L94yAjOicHCw/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame22.png" alt="img"></p>
 <p><em>三､新建瓦片地图</em></p>
 <p>右键Hierarchy窗口 选择2D object-TileMap，会在Hierarchy窗口下生成一个新的叫Grid的游戏物体</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKuLp6Bs861dvXDUgTa61rI8TLqvqYuP3evibWZCM6q4NOiayvwVSy0fwA/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame23.png" alt="img"></p>
 <p>然后选中grid下面的tilemap,点击顶部的window，选择2d-tile palette</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKib6gNFb0eNOzxhktH7ZOVkDTdaktkebnmXx1aGwfoZDGQ2HsejK9kew/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame24.png" alt="img"></p>
 <p>如果没有tile palette这个选项需要先去window-package manage里面安装2d tilemap editor点击install</p>
 <p>我这里是安装后的 所以显示的不是install</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtK5Fyy7ds8SpiaJyXjBBZMS00M0vplvycRvGHR6ER5fzK7QK3ycEUhBqg/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame25.png" alt="img"></p>
 <p><em>四､新建palette</em></p>
 <p>点击create new palette 将name设置为map 点击create进行创建</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKXGaCSGzD9McIdB3hUuELE3FmiaAZPQVFp32c6vUufWHnOoeViaHrshhw/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame26.png" alt="img"></p>
 <p>然后在这里新建一个文件夹叫map 将我们新建的palette存在map文件夹</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtK7h8SkRA0TwRGxcFqaVzFYw2e9GGibPickjWkbOVLh1OXW2AzljsOd6icg/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame27.png" alt="img"></p>
 <p><em>五､切割瓦片地图集</em></p>
 <p>选中tileset，将tileset的像素单位设置为16，点击apply，</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKvZ9RCDHeMUod4p7rI96A4zGwe5U3vCNT1bRlUAZnbhmuesMuxQS59Q/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame28.png" alt="img"></p>
 <p>然后将sprite mode 切换为multiple，再点击sprite editor打开瓦片图集编辑窗口，点击slice，type选择Grid By Cell Size表示自定义切割大小,然后写入大小X16 Y16，再点击slice，再点击apply，这时候我们的瓦片集就不是一张整个的图片了，就可以使用每个小像素块进行绘制了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKK9GsKWRibAicXIoRrDYW3c7lGQG9S6jJ6UuhIEErHqtUbzUsFhwTBw5A/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame29.png" alt="img"></p>
 <p>然后将切割好的瓦片图集文件拖拽到palette窗口 保存到刚才新建的map文件夹</p>
 <p>为了让背景图片不干扰接下来绘制地图，先切换到Hierarchy窗口，选择back，在右侧属性那里的选择框勾掉，将背景掩藏</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKOfbUko11GOMwBjMQJNmCIB4avkW1cuJcM45kMnbQyiauYjC3Olnr0BA/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame210.png" alt="img"></p>
 <p>然后回到tile palette 面板，点击工具栏第三个笔刷，再随便选择一个瓦片资源，就可以在scene中点击鼠标左键进行地图的绘制了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/eC50UUVD4t4P9PSeicy3yptiaMUcMFEYtKnaWZOTnaZP6ibzrtzc0dqomCibPaVnZXYzEC1bibf6RibBToNRnekOeyNQ/0?wx_fmt=png" alt="img"></p>
+<p><img src="http://s1.wailian.download/2020/06/18/firstgame211.png" alt="img"></p>
 <p>第二节课到这里 <a href="https://www.bilibili.com/video/BV1W4411Z7xs" target="_blank" rel="noopener">原视频地址</a></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
