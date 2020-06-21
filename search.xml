@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>unity学习笔记-YourFirstGame4</title>
+    <url>/2020/06/21/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame4/</url>
+    <content><![CDATA[<p>简介</p>
+<blockquote>
+<p>本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(<a href="https://space.bilibili.com/370283072" target="_blank" rel="noopener">M_Studio</a>)在B站发的<a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">Unity教程 Your First Game</a>，笔记内容没那么详细，仅供复习使用，学习请前往观看麦可老师的视频</p>
+</blockquote>
+<p>麦可老师在这节课主要讲了角色移动</p>
+<p><strong><em>一､查看输入按键</em></strong><br>　　首先点击edit 再点击 Project Settings，这时会打开一个叫Project Settings的窗口，找到input manager，打开折叠，比如这个horizontal 中文名水平方向就是代表我们的角色左右移动，官方设置好的按键是ad或者小键盘左右，这里我们不做修改，使用默认的就可以，同理vertical代表垂直方向,默认sw或者小键盘上下</p>
+<p><img src="/img/FirstGame/FristGame41.png" alt=""></p>
+<p><strong>二､添加角色移动代码</strong></p>
+<p>在assets目录下面创建一个文件夹命名为Scripts</p>
+<p>右键选择Create-c#script 命名为PlayerController</p>
+<p><img src="/img/FirstGame/FristGame42.png" alt=""></p>
+<p> 然后把这个script拖拽到player上 然后unity会为我们自动将playercontroller挂载到player物体上</p>
+<p><img src="/img/FirstGame/FristGame43.png" alt=""></p>
+<p>双击PlayerController会为我们自动打开编辑器 我这里使用的是vs2019</p>
+<p>填写以下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class PlayerController : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; 声明一个变量用来接收刚体</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">    public Rigidbody2D rb;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; 声明一个变量代表速度</span><br><span class="line">    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">    public float speed;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Start is called before the first frame update</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Update is called once per frame</span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        MoveMent();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void MoveMent()</span><br><span class="line">	&#123;</span><br><span class="line">        &#x2F;&#x2F;horizontalMove值分别为 左-1  右1 不动 0</span><br><span class="line">        float horizontalMove &#x3D;Input.GetAxis(&quot;Horizontal&quot;);</span><br><span class="line">		if (horizontalMove!&#x3D;0)</span><br><span class="line">		&#123;</span><br><span class="line">            &#x2F;&#x2F;horizontalMove!&#x3D;0证明角色在动</span><br><span class="line">            rb.velocity &#x3D; new Vector2(horizontalMove*speed,0);&#x2F;&#x2F;方向乘以速度 Y轴不动</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>三､将角色移动组件挂载到游戏物体上</strong></p>
+<p>回到unity，选中player，将player上面的刚体组件拖拽到刚才创建的c#脚本上，再为其设置一个初始速度为10</p>
+<p><img src="/img/FirstGame/FristGame44.png" alt=""></p>
+<p>运行游戏 按ad键或者小键盘左右键就会发现游戏物体可以移动了</p>
+<p><strong>四､锁定z轴</strong></p>
+<p>刚才游戏运行之后游戏物体可能会发生旋转的情况，这是因为他碰到了tilemap的碰撞体，产生了物理碰撞，所以我们需要禁用他的z轴旋转</p>
+<p>选中player 在属性面板修改刚体组件的Constraints 将Freeze Rotation Z选中</p>
+<p><img src="/img/FirstGame/FristGame45.png" alt=""></p>
+<p>再运行游戏 角色就不会旋转了 但是可能会有卡顿 这个以后会解决</p>
+<p>第四节课到这里 <a href="https://www.bilibili.com/video/BV1f4411Z7oL?p=2" target="_blank" rel="noopener">原视频地址</a></p>
+]]></content>
+      <categories>
+        <category>c#</category>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>YourFirstGame</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不想用teamviewer和向日葵远程 试试frp吧</title>
     <url>/2020/06/21/Frp%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</url>
     <content><![CDATA[<p><strong>前言</strong><br>　　最近发现teamview越来越不稳定了，总连接不上，对向日葵也是无感，倒不是说这两个产品不好，毕竟也是陪伴过我很长一段时间的软件了，于是上网找寻到了一个反向代理神器——FRP</p>
