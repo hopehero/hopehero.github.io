@@ -68,7 +68,7 @@
         <div class="content markdown">
             <p><strong>前言</strong><br>　　最近发现teamview越来越不稳定了，总连接不上，对向日葵也是无感，倒不是说这两个产品不好，毕竟也是陪伴过我很长一段时间的软件了，于是上网找寻到了一个反向代理神器——FRP</p>
 <p><strong>介绍</strong><br>　　frp是一个高性能的反向代理应用，主要用于内网穿透，我们这里不研究内网穿透，主要用他来进行远程桌面连接，他对比teamviewer和向日葵等远程软件最大的特点就是他免安装，而且轻量，几乎不占电脑内存，不过前提是你得有一台带公网ip的电脑(服务器)</p>
-<p><strong>使用</strong><br>1.下载frp       [frp发布页面][<a href="https://github.com/fatedier/frp/releases]" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases]</a>.<br>2.根据自己的服务器系统下载对应的版本 我这里下载的是<a href="https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_windows_386.zip" target="_blank" rel="noopener">frp_0.33.0_windows_386.zip</a>。</p>
+<p><strong>使用</strong><br>1.下载frp       <a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">frp发布页面</a><br>2.根据自己的服务器系统下载对应的版本 我这里下载的是<a href="https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_windows_386.zip" target="_blank" rel="noopener">frp_0.33.0_windows_386.zip</a>。</p>
 <p><img src="/img/frp/frp1.png" alt="frp1"></p>
 <p>3.解压刚刚下载好的压缩包，会发现如下目录</p>
 <p><img src="/img/frp/frp2.png" alt="frp1"></p>
@@ -96,7 +96,7 @@
 <p>7.换另一台电脑,打开远程桌面连接 就是你输入cmd的那个地方输入mstsc</p>
 <p>输入服务器ip和frpc里面的remote_port端口号 就可以连接到想要被控制的电脑了</p>
 <p>8.使用nssm将frpc注册为本地服务。</p>
-<p> 参考 <a href="http://www.yaolunmao.top/2020/03/13/(转载">http://www.yaolunmao.top/2020/03/13/(%E8%BD%AC%E8%BD%BD)nssm%20%E5%9C%A8windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%20%E6%84%9F%E8%A7%89%E6%AF%94winsw%E5%A5%BD%E7%94%A8/</a>nssm 在windows上部署服务 感觉比winsw好用/)</p>
+<p> 参考 <a href="http://www.yaolunmao.top/2020/03/13/(%E8%BD%AC%E8%BD%BD)nssm%20%E5%9C%A8windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%20%E6%84%9F%E8%A7%89%E6%AF%94winsw%E5%A5%BD%E7%94%A8/">之前发过的nssm部署windows服务</a></p>
 <p>注册完以后你可以将注册完的服务设置为开机启动</p>
 <p>这样fpc就不用通过powershell打开了 </p>
 
