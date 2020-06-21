@@ -5,14 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>unity学习笔记-YourFirstGame3 - 咬轮猫</title>
+    <title>不想用teamviewer和向日葵远程 试试frp吧 - 咬轮猫</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="咬轮猫,"> 
-    <meta name="description" content="beizhushisha,简介
-
-本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(M_Studio)在B站发的Unity教程 Your First Game，笔记内容没那么详细，仅供复习使用，学习请,"> 
+    <meta name="description" content="beizhushisha,前言　　最近发现teamview越来越不稳定了，总连接不上，对向日葵也是无感，倒不是说这两个产品不好，毕竟也是陪伴过我很长一段时间的软件了，于是上网找寻到了一个反向代理神器——FRP
+介绍　　frp,"> 
     <meta name="author" content="咬轮猫"> 
     <link rel="alternative" href="atom.xml" title="咬轮猫" type="application/atom+xml"> 
     <link rel="icon" href="/img/thumbnail.png"> 
@@ -43,7 +42,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://www.yaolunmao.top"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">unity学习笔记-YourFirstGame3</h3>
+    <h3 class="subtitle">不想用teamviewer和向日葵远程 试试frp吧</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -58,58 +57,48 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">unity学习笔记-YourFirstGame3</h1>
+        <h1 class="title">不想用teamviewer和向日葵远程 试试frp吧</h1>
         <div class="stuff">
-            <span>六月 18, 2020</span>
+            <span>六月 21, 2020</span>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/YourFirstGame/" rel="tag">YourFirstGame</a></li></ul>
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" rel="tag">远程桌面</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <p>简介</p>
-<blockquote>
-<p>本文主要记载自己学习unity的过程，边看视频边写笔记,原视频为麦可老师(<a href="https://space.bilibili.com/370283072" target="_blank" rel="noopener">M_Studio</a>)在B站发的<a href="https://www.bilibili.com/video/BV1W4411Z7UC" target="_blank" rel="noopener">Unity教程 Your First Game</a>，笔记内容没那么详细，仅供复习使用，学习请前往观看麦可老师的视频</p>
-</blockquote>
-<p>麦可老师在这节课主要讲了图层Layer以及角色创建</p>
-<p><strong><em>一､sorting layer设置</em></strong><br>　　首先点击Hierarchy窗口 点击back物体 选中inspector 启用属性 这时候我们会发现之前画的地图被背景图片挡住了</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame31.png" alt=""></p>
-<p>接下来点击inspector里面的 sorting layer下拉添加新的add sorting layer</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame32.png" alt=""></p>
-<p>添加两个图层 Background，Frontground</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame33.png" alt=""></p>
-<p>然后回到hierarchy窗口 点击选中back物体 更改他的sorting layer属性为background</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame34.png" alt=""></p>
-<p>再选中grid下面的tilemap物体 更改它的sorting layer属性为frontground</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame35.png" alt=""></p>
-<p>sorting layer里面的图层在下面的图层显示在游戏窗口的上面，比如这里tilemap对应的frontground所在layer在back的background下面，但是tilemap这个物体却显示在back上面，如果两个物体的sorting layer是一个图层，那么可以通过调节下面的order in layer决定谁显示在上面，值大的在上面</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame36.png" alt=""></p>
-<p><strong>二､添加游戏角色</strong></p>
-<p>找到角色 位置在</p>
-<p>Assets/Sunnyland/artwork/Sprites/player/idle/player-idle-1.png</p>
-<p>点击角色图片 将其像素单位设置为16 点击apply</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame37.png" alt=""></p>
-<p>首先选中角色图片 将其直接拖入到游戏场景scene中，这时候是看不见我们的人物的，接下来需要点击hierarchy窗口，选中游戏角色，将属性的sorting layer修改为frontground</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame38.png" alt=""></p>
-<p>然后再修改角色物体的命名，将其修改为Player，点击Transform快捷操作，重置角色的坐标</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame39.png" alt=""></p>
-<p><strong>三､为角色添加刚体组件</strong></p>
-<p>选中player物体，在属性面板中点击Add Component，搜索rigid，即可看到rigidbody 2D组件，点击即可添加，现在我们的player就不是一个纸片人了，而是一个带重力的物体了，重力属性为rigidbody2d的Gravity Scale</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame310.png" alt=""></p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame311.png" alt=""></p>
-<p>然后点击开始游戏按钮，会发现player可以穿过我们画的地图 这是因为他还没有任何碰撞体</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame312.png" alt=""></p>
-<p><strong>四､添加碰撞体</strong></p>
-<p>和添加刚体一样，选中player，在右侧属性面板中点击Add Component，添加一个Box collider 2D</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame313.png" alt=""></p>
-<p>这时候player就有了碰撞体，但是碰撞体的大小还不符合，所以需要点击Box collider 2D下面的Edit Collider来修改碰撞体大小，这里我修改为和player一样大</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame314.png" alt=""></p>
-<p>同样的方法 还需要为地面添加一个碰撞体，tilemap有单独的碰撞体组件（如果用Box collider 2D一个一个添加会累死人），选中Tilemap物体，点击Add Component，添加一个Tilemap Colloder 2D</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame315.png" alt=""></p>
-<p>这时候会发现所有的tilemap都生成了绿色的小框框</p>
-<p><img src="http://s1.wailian.download/2020/06/18/FirstGame316.png" alt=""></p>
-<p>然后运行游戏 player就会落到地面了</p>
-<p>第三节课到这里 <a href="https://www.bilibili.com/video/BV1r4411Z7dD" target="_blank" rel="noopener">原视频地址</a></p>
+            <p><strong>前言</strong><br>　　最近发现teamview越来越不稳定了，总连接不上，对向日葵也是无感，倒不是说这两个产品不好，毕竟也是陪伴过我很长一段时间的软件了，于是上网找寻到了一个反向代理神器——FRP</p>
+<p><strong>介绍</strong><br>　　frp是一个高性能的反向代理应用，主要用于内网穿透，我们这里不研究内网穿透，主要用他来进行远程桌面连接，他对比teamviewer和向日葵等远程软件最大的特点就是他免安装，而且轻量，几乎不占电脑内存，不过前提是你得有一台带公网ip的电脑(服务器)</p>
+<p><strong>使用</strong><br>1.下载frp       [frp发布页面][<a href="https://github.com/fatedier/frp/releases]" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases]</a>.<br>2.根据自己的服务器系统下载对应的版本 我这里下载的是<a href="https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_windows_386.zip" target="_blank" rel="noopener">frp_0.33.0_windows_386.zip</a>。</p>
+<p><img src="/img/frp/frp1.png" alt="frp1"></p>
+<p>3.解压刚刚下载好的压缩包，会发现如下目录</p>
+<p><img src="/img/frp/frp2.png" alt="frp1"></p>
+<p>frpc.exe和frpc.ini是要放在被远程电脑上的</p>
+<p>frps.exe和frps.ini是要放在服务器上的</p>
+<p>4.把frps.exe和frps.ini放到服务器上 在当前目录按住shift加鼠标右键 选择在此处打开powershell窗口</p>
+<p>输入./frps.exe 启动服务端程序</p>
+<p>启动成功之后会有success提示</p>
+<p><img src="/img/frp/frp3.png" alt="frp1"></p>
+<p>5.把frpc.exe和frpc.ini放到要被控制的电脑上</p>
+<p>将frpc.ini里面的配置修改成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr &#x3D; 你的服务器ip地址</span><br><span class="line">server_port &#x3D; 7000</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[RDP]</span><br><span class="line">type &#x3D; tcp</span><br><span class="line">local_ip &#x3D; 0.0.0.0</span><br><span class="line">local_port &#x3D; 3389</span><br><span class="line">remote_port &#x3D; 6666</span><br></pre></td></tr></table></figure>
+
+<p>此处的server_port代表你放在服务器的frps.ini里面的监听端口 默认是7000</p>
+<p>local_port是远程桌面rdp的端口号 默认这个就行</p>
+<p>remote_port是远程端口号 例如你的服务器ip是123.123.123.123 你开启远程的时候输入的地址就是</p>
+<p>123.123.123.123:6666</p>
+<p><img src="/img/frp/frp5.png" alt="frp1"></p>
+<p>然后同上操作 在当前目录按住shift加鼠标右键 选择在此处打开powershell窗口</p>
+<p>输入./frpc.exe 启动服务端程序</p>
+<p>连接成功会有如下提示</p>
+<p><img src="/img/frp/frp4.png" alt="frp1"></p>
+<p>6.在设置——系统——远程桌面 打开远程桌面开关</p>
+<p><img src="/img/frp/frpbuchong.png" alt="frp1"></p>
+<p>7.换另一台电脑,打开远程桌面连接 就是你输入cmd的那个地方输入mstsc</p>
+<p>输入服务器ip和frpc里面的remote_port端口号 就可以连接到想要被控制的电脑了</p>
+<p>8.使用nssm将frpc注册为本地服务。</p>
+<p> 参考 <a href="http://www.yaolunmao.top/2020/03/13/(转载">http://www.yaolunmao.top/2020/03/13/(%E8%BD%AC%E8%BD%BD)nssm%20%E5%9C%A8windows%E4%B8%8A%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%20%E6%84%9F%E8%A7%89%E6%AF%94winsw%E5%A5%BD%E7%94%A8/</a>nssm 在windows上部署服务 感觉比winsw好用/)</p>
+<p>注册完以后你可以将注册完的服务设置为开机启动</p>
+<p>这样fpc就不用通过powershell打开了 </p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
