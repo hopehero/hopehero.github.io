@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NetCore3 WebApi使用模型验证参数合法性</title>
+    <url>/2020/07/06/WebApi%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9E%8B%E9%AA%8C%E8%AF%81%E5%8F%82%E6%95%B0%E5%90%88%E6%B3%95%E6%80%A7/</url>
+    <content><![CDATA[<p>在接口开发过程中免不了要去验证参数的合法性，模型验证就是帮助我们去验证参数的合法性。我们可以在需要验证的model属性上加上Data Annotations特性后就会自动帮我们在action前去验证输入数据的合法性。</p>
+<p>1、定义一个class</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1     public class TokenRequest</span><br><span class="line">2     &#123;</span><br><span class="line">3         [Required]</span><br><span class="line">4         [StringLength(6)]</span><br><span class="line">5         public string Username &#123; get; set; &#125;</span><br><span class="line">6 </span><br><span class="line">7         [Required]</span><br><span class="line">8         public string Password &#123; get; set; &#125;</span><br><span class="line">9     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、在Controller接口中，使用ModelState.IsValid验证</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (!ModelState.IsValid)</span><br><span class="line">&#123;</span><br><span class="line">      return BadRequest();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>.NetCore WebApi对于参数验证默认返回样式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;type&quot;: &quot;https:&#x2F;&#x2F;tools.ietf.org&#x2F;html&#x2F;rfc7231#section-6.5.1&quot;,</span><br><span class="line">  &quot;title&quot;: &quot;One or more validation errors occurred.&quot;,</span><br><span class="line">  &quot;status&quot;: 400,</span><br><span class="line">  &quot;traceId&quot;: &quot;|2cf913f6-46e1cc8505a94470.&quot;,</span><br><span class="line">  &quot;errors&quot;: &#123;</span><br><span class="line">    &quot;Password&quot;: [&quot;The Password field is required.&quot;],</span><br><span class="line">    &quot;Username&quot;: [&quot;The Username field is required.&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>3、如果想统一验证，而不是到处都是ModelState.IsValid</p>
+<p>(1)定义Attribute继承ActionFilterAttribute，重写OnActionExecuting方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> 1     public class ValidateModelAttribute : ActionFilterAttribute</span><br><span class="line"> 2     &#123;</span><br><span class="line"> 3         public override void OnActionExecuting(ActionExecutingContext context)</span><br><span class="line"> 4         &#123;</span><br><span class="line"> 5             var modelState &#x3D; context.ModelState;</span><br><span class="line"> 6             if (!modelState.IsValid)</span><br><span class="line"> 7             &#123;</span><br><span class="line"> 8                 var validationErrors &#x3D; modelState.Keys</span><br><span class="line"> 9                     .SelectMany(key &#x3D;&gt; modelState[key].Errors.Select(x &#x3D;&gt; new ValidationError(key, x.ErrorMessage)));</span><br><span class="line">10                 context.Result &#x3D; new ObjectResult(validationErrors);</span><br><span class="line">11             &#125;</span><br><span class="line">12         &#125;</span><br><span class="line">13     &#125;</span><br><span class="line">14 </span><br><span class="line">15     public class ValidationError</span><br><span class="line">16     &#123;</span><br><span class="line">17         public string Field &#123; get; set; &#125;</span><br><span class="line">18 </span><br><span class="line">19         public string Message &#123; get; set; &#125;</span><br><span class="line">20 </span><br><span class="line">21         public ValidationError(string field, string message)</span><br><span class="line">22         &#123;</span><br><span class="line">23             Field &#x3D; field;</span><br><span class="line">24             Message &#x3D; message;</span><br><span class="line">25         &#125;</span><br><span class="line">26     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)Starup类ConfigureServices</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> 1             services.AddControllers(options &#x3D;&gt;</span><br><span class="line"> 2             &#123;</span><br><span class="line"> 3                 &#x2F;&#x2F; 添加自定义验证方式</span><br><span class="line"> 4                 options.Filters.Add&lt;ValidateModelAttribute&gt;();</span><br><span class="line"> 5             &#125;);</span><br><span class="line"> 6 </span><br><span class="line"> 7             services.Configure&lt;ApiBehaviorOptions&gt;(options &#x3D;&gt;</span><br><span class="line"> 8             &#123;</span><br><span class="line"> 9                 &#x2F;&#x2F; 关闭默认的验证方式</span><br><span class="line">10                 options.SuppressModelStateInvalidFilter &#x3D; true;</span><br><span class="line">11             &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这样就可以全局验证参数，而不是在Controller的Action中到处都是ModelState</p>
+<p>验证效果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 [&#123;</span><br><span class="line">2   &quot;field&quot;: &quot;Password&quot;,</span><br><span class="line">3   &quot;message&quot;: &quot;The Password field is required.&quot;</span><br><span class="line">4 &#125;, &#123;</span><br><span class="line">5   &quot;field&quot;: &quot;Username&quot;,</span><br><span class="line">6   &quot;message&quot;: &quot;The field Username must be a string with a maximum length of 6.&quot;</span><br><span class="line">7 &#125;]</span><br></pre></td></tr></table></figure>
+
+<p>转自<a href="https://www.cnblogs.com/lcblog/articles/13215038.html" target="_blank" rel="noopener">博客园</a></p>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>c#</tag>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>unity学习笔记-YourFirstGame4</title>
     <url>/2020/06/21/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame4/</url>
     <content><![CDATA[<p>简介</p>
