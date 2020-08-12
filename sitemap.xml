@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.yaolunmao.top/2020/08/12/netcore3.1webapi%E4%BD%BF%E7%94%A8signalR/</loc>
+    
+    <lastmod>2020-08-12T04:44:09.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.yaolunmao.top/2020/06/21/Frp%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</loc>
+    
+    <lastmod>2020-08-12T04:41:08.448Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.yaolunmao.top/2020/07/06/WebApi%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9E%8B%E9%AA%8C%E8%AF%81%E5%8F%82%E6%95%B0%E5%90%88%E6%B3%95%E6%80%A7/</loc>
     
     <lastmod>2020-07-11T06:59:11.298Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://www.yaolunmao.top/2020/06/21/unity%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-YourFirstGame4/</loc>
     
     <lastmod>2020-06-21T13:56:46.147Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.yaolunmao.top/2020/06/21/Frp%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</loc>
-    
-    <lastmod>2020-06-21T13:13:16.415Z</lastmod>
     
   </url>
   
@@ -142,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://www.yaolunmao.top/ErrorFiles/401.html</loc>
+    <loc>http://www.yaolunmao.top/ErrorFiles/502.html</loc>
     
     <lastmod>2019-10-18T07:58:38.000Z</lastmod>
     
@@ -156,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://www.yaolunmao.top/ErrorFiles/502.html</loc>
+    <loc>http://www.yaolunmao.top/ErrorFiles/500.html</loc>
     
     <lastmod>2019-10-18T07:58:38.000Z</lastmod>
     
@@ -191,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://www.yaolunmao.top/ErrorFiles/500.html</loc>
+    <loc>http://www.yaolunmao.top/ErrorFiles/401.html</loc>
     
     <lastmod>2019-10-18T07:58:38.000Z</lastmod>
     
